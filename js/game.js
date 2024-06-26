@@ -25,12 +25,9 @@ GAME.addEventListener("mouseup", (e) => {
     
     mouseupY = e.y;
     if(mouseupY + 100 < mousedownY) {
-        console.log("shoot");
         Amiya.src = `/img/Amiya_${Amiya_Skin}_attack2.gif`;
-        
         shootImgBuffer = setTimeout((e) => {
             Amiya.src = `/img/Amiya_${Amiya_Skin}_idle.gif`;
-            console.log(`shoot`);
         }, 1000);
     }else {
         Amiya.src = `/img/Amiya_${Amiya_Skin}_idle.gif`;
