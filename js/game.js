@@ -1,16 +1,23 @@
-const GAME = document.querySelector('.game');
-const Amiya = document.querySelector('.amiya');
-let Amiya_Skin = `planter`;
+
 
 let mousedownY = -1;
 let mouseupY = -1;
 let shootImgBuffer = null;
 
+Amiya.src = IMG.Amiya_default_idle.src;
+
 GAME.addEventListener("mousedown", (e) => {
     
+    GAME.addEventListener("mousemove", (em) => {
+        if(mousedownY < em.y) {
+            mousedownY = em.y;
+        }
+    })
+
     mousedownY = e.y;
     Amiya.src = `/img/Amiya_${Amiya_Skin}_attack1.gif`;
     clearTimeout(shootImgBuffer);
+
 
 })
 
