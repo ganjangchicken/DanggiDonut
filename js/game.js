@@ -18,13 +18,13 @@ GAME.addEventListener("mousedown", (e) => {
     Amiya.src = `/img/Amiya_${Amiya_Skin}_attack1.gif`;
     clearTimeout(shootImgBuffer);
 
-
 })
 
 GAME.addEventListener("mouseup", (e) => {
     
     mouseupY = e.y;
     if(mouseupY + 100 < mousedownY) {
+        AUDIO.effect_shot.play();
         Amiya.src = `/img/Amiya_${Amiya_Skin}_attack2.gif`;
         shootImgBuffer = setTimeout((e) => {
             Amiya.src = `/img/Amiya_${Amiya_Skin}_idle.gif`;
